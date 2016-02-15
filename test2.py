@@ -9,15 +9,19 @@ import os
 
 print("hello");
 
-annee =int(raw_input("Entrez un nombre: "))
-print(annee);
+n =int(raw_input("Entrez un nombre: "))
+print(n);
 i = 0;
 while i < 2:
 	x=random.randint(1,10);
 	y=random.randint(1,10);
-	print(x,"x",y);
-	#raw_input()
+	print("z=",x,"x",y);
+	w =int(raw_input())
 	z=x * y;
+	if z == w:
+		print ("bon");
+	else:
+	   print("bad");
 	i+=1;
 	print(z);
 

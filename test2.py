@@ -1,41 +1,28 @@
-#! /usr/bin/env Python
-# -*- coding: utf-8 -*-
+# Ce programme calcule le périmètre d'un cercle dont
+# le rayon a été demandé au clavier à l'utilisateur.
+
+import math
+
+def perimetre_cercle(un_rayon):
+    """Calculer le périmètre d'un cercle à partir de son rayon.
+	:param un_rayon: le rayon du cercle (positif)
+	:return le périmètre d'un cercle de rayon un_rayon
+    """
+    diametre = 2 * un_rayon
+    return math.pi * diametre
 
 
-import random
-import urllib2
-import os
-# int annee;
+def main():
+    """Le programme principal."""
+    # demander le rayon à l'utilisateur
+    saisie = input("Rayon du cercle : ")    # une chaîne de caractères
+    le_rayon = float(saisie)                # convertie en un nombre réel
 
-print("hello");
+    # calculer le périmètre
+    perimetre = perimetre_cercle(le_rayon)
 
-n =int(raw_input("Entrez un nombre: "))
-print(n);
-i = 0;
-while i < 2:
-	x=random.randint(1,10);
-	y=random.randint(1,10);
-	print("z=",x,"x",y);
-	w =int(raw_input())
-	z=x * y;
-	if z == w:
-		print ("bon");
-	else:
-	   print("bad");
-	i+=1;
-	print(z);
+    # afficher le périmètre à l'utilisateur
+    print("Le périmètre d'un cercle de rayon", le_rayon, "est", perimetre)
 
-
-class Rectangle:
-    "ceci est la classe Rectangle"
-    def __init__(self, long = 0.0, larg = 0.0, coul = "blanc"):
-        self.longueur = long
-        self.largeur = larg
-        self.couleur = coul
-    # définition de la méthode qui calcule la surface
-    def calculSurface(self):
-        print "surface = %.2f m2" %(self.longueur * self.largeur)
-    # définition de la méthode qui transforme un rectangle en carré
-    def changeCarre(self, cote):
-        self.longueur = cote
-        self.largeur = cote
+if __name__ == "__main__":
+    main()

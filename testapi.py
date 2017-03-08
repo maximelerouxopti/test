@@ -9,7 +9,7 @@ import os
 
 #je fais des tests
 #pouet
-
+#yolo pc boulot
 # http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=959f090befe241b8c3993b96994a1cce
 # curl -0 -L "https://disqus.com/api/3.0/trends/listThreads.json?api_key=API_PUBLIC_KEY_HERE&callback=foo"
 

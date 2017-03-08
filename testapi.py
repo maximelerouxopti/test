@@ -1,8 +1,12 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 import py
 import urllib2
 import os
+import os.path
+import json
+import sys
 
 #def hello(arg1, arg2):
 #    print arg1, arg2
@@ -13,29 +17,37 @@ import os
 # http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=959f090befe241b8c3993b96994a1cce
 # curl -0 -L "https://disqus.com/api/3.0/trends/listThreads.json?api_key=API_PUBLIC_KEY_HERE&callback=foo"
 
-def requete(ville):
-    villefc= 
-
-    return req
- 
+#def requete(ville):
+#    villefc= 
+#    return req
 
 
 def main():
     """Le programme principal."""
-    try
-       page_json = urllib2.urlopen('http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=959f090befe241b8c3993b96994a1cce')
+    ville = input("entrer la ville:")
+    la_ville = str(ville)
+    req = requete(la_ville)
+    try:
+       page_json = urllib2.urlopen('http://api.openweathermap.org/data/2.5/weather?q=Paris&APPID=959f090befe241b8c3993b96994a1cce')
     # Je lis la page
        json_string = page_json.read()
     # Je mets cette page dans un parseur
        parsed_json = json.loads(json_string)
     # Et je peux fermer ma page meteo, je n'en ai plus besoin
        page_json.close()
-    except
-       print("ça marche pas")
-
+       print("coucou")
+    except:
+        print("ca marche pas")
+        sys.exit(2)    
     
-   #    ville = input("entrer la ville : ")    # une chaîne de caractères
-#    mareq=requete
+    city = parsed_json['name'] # la ville
+   # weather = parsed_json['weather']['main'] # l'heure dernière observation
+    current_temp = parsed_json['main']['temp'] # la température en °C
+    current_temp = current_temp -273;
+    print (city)
+    print (current_temp)
+    #    ville = input("entrer la ville : ")    # une chaîne de caractères
+    #    mareq=requete
     #le_rayon = float(saisie)                # convertie en un nombre réel
     # calculer le périmètre
     #perimetre = perimetre_cercle(le_rayon)
@@ -44,3 +56,10 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def requete (ville):
+    req= 'http://api.openweathermap.org/data/2.5/weather?q=Paris&APPID=959f090befe241b8c3993b96994a1cce'
+    print req
+    return req
+

@@ -16,6 +16,10 @@ import sys
 #yolo pc boulot
 # http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=959f090befe241b8c3993b96994a1cce
 # curl -0 -L "https://disqus.com/api/3.0/trends/listThreads.json?api_key=API_PUBLIC_KEY_HERE&callback=foo"
+#from twitter import *
+
+#t = Twitter(
+#    auth=OAuth(token, token_secret, consumer_key, consumer_secret))
 
 #def requete(ville):
 #    villefc= 
@@ -24,9 +28,9 @@ import sys
 
 def main():
     """Le programme principal."""
-    ville = input("entrer la ville:")
-    la_ville = str(ville)
-    req = requete(la_ville)
+   # ville = input("entrer la ville:")
+   # la_ville = str(ville)
+   # req = requete(la_ville)
     try:
        page_json = urllib2.urlopen('http://api.openweathermap.org/data/2.5/weather?q=Paris&APPID=959f090befe241b8c3993b96994a1cce')
     # Je lis la page
